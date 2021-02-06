@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuButtons : MonoBehaviour
 {
+    //THE SCRIPT WILL ALSO BE USED IN HELP SCREEN
     //TODO (2): Create public voids for each button
 
     //Play Button, onClick Go to the Game Scene
@@ -24,6 +25,12 @@ public class MainMenuButtons : MonoBehaviour
     public void QuitButton()
     {
         Application.Quit();
+    }
+
+    //Only used in help screen - Takes back to main menu
+    public void BackToMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 }
 
