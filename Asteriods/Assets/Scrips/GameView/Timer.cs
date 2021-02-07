@@ -1,6 +1,8 @@
 using UnityEngine;
 //TODO (1): Import Unity Engine IU
 using UnityEngine.UI;
+//TODO (DEBUG): Import SceneManager
+using UnityEngine.SceneManagement;
 
 
 public class Timer : MonoBehaviour
@@ -63,6 +65,12 @@ public class Timer : MonoBehaviour
 
         //TODO (9): Add one to the seconds
         timeSec++;
+
+        //TODO (DEBUG): After 12 sec end game
+        if(timeSec > 12)
+        {
+            SceneManager.LoadScene(3);
+        }
     }
 }
 

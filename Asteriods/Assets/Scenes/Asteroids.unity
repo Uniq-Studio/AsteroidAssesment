@@ -427,6 +427,7 @@ GameObject:
   - component: {fileID: 1341228341}
   - component: {fileID: 1341228340}
   - component: {fileID: 1341228339}
+  - component: {fileID: 1341228344}
   m_Layer: 0
   m_Name: Ship
   m_TagString: Untagged
@@ -559,6 +560,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1341228344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1341228338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 891c97da678d58c4798bb692b4520c55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletGamePrefab: {fileID: 8229389104289011413, guid: 8c9e9c5e259a9814e9c515ddd4985ae1, type: 3}
+  BulletTransform: {fileID: 1341228343}
 --- !u!1 &1353629517
 GameObject:
   m_ObjectHideFlags: 0
