@@ -3,7 +3,6 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     #region Variables
-    
     //TODO (1): Create Variables to hold speed and time till despawn
     public int speed = 50;
     public float despawnTime = 10f;

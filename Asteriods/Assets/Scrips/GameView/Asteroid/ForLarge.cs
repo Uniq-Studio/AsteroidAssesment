@@ -1,9 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ForLarge : MonoBehaviour
 {
+    //TODO (3): Specify damage and points
+    public int damage = 25;
+    public int points = 2000;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,8 +28,14 @@ public class ForLarge : MonoBehaviour
             //This will get removed from game space
             Destroy(gameObject);
         }
+        //TODO (2): Create the same but with player and call meathod of damage through player script
+        if (collider2D.CompareTag("Player"))
+        {
+            collider2D.GetComponent<Health>().AsteroidDamage(damage);
+        }
     }
     #endregion
+
 }
 #region Resources
 //RESOURCES USED: 
