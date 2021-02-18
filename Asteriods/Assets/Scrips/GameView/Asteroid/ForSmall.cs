@@ -4,13 +4,21 @@ public class ForSmall : MonoBehaviour
 {
     //TODO (3): Specify damage and points
     public int damage = 10;
-    public int points = 1000;
-    // Start is called before the first frame update
+    public int points = 20;
+    int speed = 25;
+    int rotation = 25;
+    public Rigidbody2D rb2d;
+    private Points pointsScript;
+
+
     void Start()
     {
-        
-    }
+        // Ranom arount of speed and roation
+        rb2d.AddForce(new Vector2(Random.Range(-speed, speed), Random.Range(-speed, speed)));
+        rb2d.AddTorque(Random.Range(-rotation, rotation));
 
+        pointsScript = FindObjectOfType<Points>();
+    }
     // Update is called once per frame
     void Update()
     {
@@ -27,6 +35,7 @@ public class ForSmall : MonoBehaviour
         {
             //This will get removed from game space
             Destroy(gameObject);
+            pointsScript.AddPoint(points);
         }
         //TODO (2): Create the same but with player and call meathod of damage through player script
         if (collider2D.CompareTag("Player"))

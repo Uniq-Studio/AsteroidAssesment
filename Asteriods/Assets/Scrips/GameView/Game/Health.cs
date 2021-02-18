@@ -6,7 +6,7 @@ public class Health : MonoBehaviour
 {
     //TODO (1): Create Health set to 100 and TextView
     public int health = 100;
-    public Text textView;
+    public Text textViewHealth;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,12 +17,12 @@ public class Health : MonoBehaviour
     void Update()
     {
         //TODO (2): Display the current health on screen
-        textView.text = health.ToString() + "% Structural Integrity ";
+        textViewHealth.text = health.ToString() + "% Structural Integrity ";
 
         #region No Health, game over
         //TODO (3): Load game over screen
         //When Player runs out of health, Game over is displayed
-        if (health == 0)
+        if (health <= 0)
         {
             //Scene 3 is the game over screen
             SceneManager.LoadScene(3);
@@ -39,6 +39,7 @@ public class Health : MonoBehaviour
         //Ship loses diffrent amount of health from scrips
         health -= damage;
     }
+
 }
 #region Resources
 //RESOURCES USED: Unity Forum

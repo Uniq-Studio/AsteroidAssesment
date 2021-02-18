@@ -3,17 +3,17 @@ using UnityEngine.UI;
 
 public class Points : MonoBehaviour
 {
-    public int score = 0;
+    public static int pointOverall;
     public Text TextView;
 
-    // Update is called once per frame
     void Update()
     {
-        TextView.text = score.ToString();
+        TextView.text = pointOverall.ToString();
+    }
+    public void AddPoint(int pointX)
+    {
+        pointOverall += pointX;
+        Debug.Log(pointOverall);
     }
 
-    public void AsteroidPoints(int scoreX)
-    {
-        score += scoreX;
-    }
 }

@@ -1,5 +1,6 @@
 using UnityEngine;
 
+
 public class Bullet : MonoBehaviour
 {
     #region Variables
@@ -8,6 +9,8 @@ public class Bullet : MonoBehaviour
     public float despawnTime = 10f;
     //TODO (2): Create a Variable to hold the bullet Prefab
     public Rigidbody2D bullet;
+
+    private Points pointsScript;
     #endregion
 
     #region Start
@@ -41,6 +44,7 @@ public class Bullet : MonoBehaviour
             //TODO (7): Remove bullet
             Destroy(gameObject);
         }
+        
     }
     #endregion
 }
