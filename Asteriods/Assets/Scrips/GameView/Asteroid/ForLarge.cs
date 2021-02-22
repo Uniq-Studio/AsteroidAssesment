@@ -11,16 +11,10 @@ public class ForLarge : MonoBehaviour
     private Points pointsScript;
     void Start()
     {
-        // Ranom arount of speed and roation
+        // Random amount of speed and roation
         rb2d.AddForce(new Vector2(Random.Range(-50, 50), Random.Range(-50, 50)));
         rb2d.AddTorque(Random.Range(-50, 50));
         pointsScript = FindObjectOfType<Points>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-       
     }
 
     #region Collision Detect
@@ -34,15 +28,19 @@ public class ForLarge : MonoBehaviour
         {
             //This will get removed from game space
             Destroy(gameObject);
+            //Run command 2 times
             for (int i = 0; i < 2; i++)
             {
+                //spawn medium asteroid
                 Instantiate(medium, transform.position, transform.rotation);
             }
+            //Call meathod to add points passing though value of points earnt
             pointsScript.AddPoint(points);
         }
         //TODO (2): Create the same but with player and call meathod of damage through player script
         if (collider2D.CompareTag("Player"))
         {
+            //Run meathod of taking value from users life
             collider2D.GetComponent<Health>().AsteroidDamage(damage);
         }
     }

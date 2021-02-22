@@ -17,15 +17,10 @@ public class ForMedium : MonoBehaviour
 
     void Start()
     {
+        // Random amount of speed and roation
         rb2d.AddForce(new Vector2(Random.Range(-speed, speed), Random.Range(-speed, speed)));
         rb2d.AddTorque(Random.Range(-rotation, rotation));
         pointsScript = FindObjectOfType<Points>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     #region Collision Detect
