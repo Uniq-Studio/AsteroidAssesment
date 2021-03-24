@@ -20,8 +20,14 @@ public class Timer : MonoBehaviour
 
     /* Created a text view to help link the textbox and update the contents */
     public Text textView;
+
+    SpawnIn tick;
     #endregion
 
+    private void Start()
+    {
+        tick = FindObjectOfType<SpawnIn>();
+    }
     // Update is called once per frame
     void Update()
     {
@@ -65,6 +71,7 @@ public class Timer : MonoBehaviour
 
         //TODO (9): Add one to the seconds
         timeSec++;
+        tick.TickAdder();
 
         //TODO (DEBUG): After 12 sec end game
         //if(timeSec > 12)

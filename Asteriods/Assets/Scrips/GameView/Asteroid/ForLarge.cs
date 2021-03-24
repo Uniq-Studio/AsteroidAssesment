@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class ForLarge : MonoBehaviour
 {
-    //TODO (3): Specify damage
+    //Specify damage and points
     public int damage = 25;
     public int points = 5;
     public GameObject medium;
@@ -14,15 +14,16 @@ public class ForLarge : MonoBehaviour
         // Random amount of speed and roation
         rb2d.AddForce(new Vector2(Random.Range(-50, 50), Random.Range(-50, 50)));
         rb2d.AddTorque(Random.Range(-50, 50));
+        //Linking Points script
         pointsScript = FindObjectOfType<Points>();
     }
 
     #region Collision Detect
-    //TODO (1): Import Collision Detection
+    //Import Collision Detection
     //Check if bullet collided
     void OnTriggerEnter2D(Collider2D collider2D)
     {
-        
+
         //Checks if this collied with the id
         if (collider2D.CompareTag("Bullet"))
         {
@@ -37,7 +38,7 @@ public class ForLarge : MonoBehaviour
             //Call meathod to add points passing though value of points earnt
             pointsScript.AddPoint(points);
         }
-        //TODO (2): Create the same but with player and call meathod of damage through player script
+        //Create the same but with player and call meathod of damage through player script
         if (collider2D.CompareTag("Player"))
         {
             //Run meathod of taking value from users life
@@ -47,11 +48,7 @@ public class ForLarge : MonoBehaviour
     #endregion
 
 }
-#region Resources
-//RESOURCES USED: 
-//TITLE: 
-//URL: 
-#endregion
+
 
 #region Code Details
 /*

@@ -10,7 +10,6 @@ public class ForSmall : MonoBehaviour
     public Rigidbody2D rb2d;
     private Points pointsScript;
 
-
     void Start()
     {
         // Random amount of speed and roation
